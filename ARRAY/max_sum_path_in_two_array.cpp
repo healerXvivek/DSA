@@ -4,7 +4,7 @@ class Solution{
     {
         int sum1=0,sum2=0,sum=0;
         int i=0,j=0;
-        while(i<n&&j<m){
+        while(i<n && j<m){
             if(A[i]==B[j]){
                 sum+=max(sum1,sum2);
                 sum+=A[i];
@@ -13,16 +13,22 @@ class Solution{
                 sum1=0;sum2=0;
             }
             else if(A[i]<B[j]){
-                sum1+=A[i++];
+                sum1+=A[i];
+                i++;
             }
             else{
-                sum2+=B[j++];
+                sum2+=B[j];
+                j++;
             }
         }
         while(i<n){
-            sum1+=A[i++];
+            sum1+=A[i];
+            i++;
         }
-        while(j<m)sum2+=B[j++];
+        while(j<m){
+        sum2+=B[j];
+        j++;
+        }
         sum+=max(sum1,sum2);
         return sum;
     }
