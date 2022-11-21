@@ -1,25 +1,26 @@
 class Solution{   
 public:
-    void threeWayPartition(vector<int>& arr,int a, int b)
+    void threeWayPartition(vector<int>& array,int a, int b)
     {
-        int n = arr.size();
-        int i = 0; 
-        int j = n - 1;
-        int idx = 0;
-        while(idx <= j){
-            if(arr[idx] < a){
-                swap(arr[idx], arr[i]);
+        int n = array.size();
+        int i = 0;
+        int start = 0, end = n-1;
+     
+        while (i<=end)
+        {
+            if (array[i] < a)
+            {
+                swap(array[i], array[start]);
                 i++;
-                idx++;
+                start++;
+            }    
+            else if (array[i] > b)
+            {
+                swap(array[i], array[end]);
+                end--;
             }
-            else if(arr[idx] > b){
-                swap(arr[idx], arr[j]);
-                j--;
-            }
-            else{
-                idx++;
-            }
+            else
+                i++;
         }
-        return;
     }
 };
