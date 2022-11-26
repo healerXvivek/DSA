@@ -19,7 +19,6 @@ class Solution {
                 if(d>255)
                 return 0;
                 count++;
-                if(count<4) //so that we will have last digit in string digit
                 digit=""; 
                 }
                 if(s[i]>='0' && s[i]<='9')
@@ -27,7 +26,7 @@ class Solution {
                     digit+=s[i];
                 }
             }
-            if(count==4 && digit.length()>0) //if there are alphabets or other special characters in string s then length of digit will be zero 
+            if(count==4) 
             return 1;
             return 0;
         }
