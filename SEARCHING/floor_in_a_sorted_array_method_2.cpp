@@ -6,7 +6,6 @@ class Solution{
     int findFloor(vector<long long> arr, long long n, long long x){
         int start=0;
         int end=n-1;
-        int ans=-1;
         while(start<=end){
             int mid=start+(end-start)/2;
             
@@ -20,7 +19,6 @@ class Solution{
             end=mid-1;
             
             }
-        ans=end;
-        return ans;
+        return end;
     }
 };
