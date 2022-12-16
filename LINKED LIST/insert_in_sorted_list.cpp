@@ -26,7 +26,7 @@ class Solution{
             return temp;
         }
         Node *curr=head;
-        while(curr->next!=NULL && curr->data<x)
+        while(curr->next!=NULL && curr->next->data<x)
         curr=curr->next;
         temp->next=curr->next;
         curr->next=temp;
