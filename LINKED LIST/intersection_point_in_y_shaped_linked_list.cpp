@@ -39,10 +39,12 @@ int intersectPoint(Node* head1, Node* head2)
               head2 = head2->next;
       }
       //finding the common node
-      while(head1 != head2)
-      {
-            head1 = head1->next;
-            head2 = head2->next;
-      }
-      return head1->data;
+      while(head1 && head2)
+    {
+        if(head1 == head2)
+        return head1->data;
+        head1 = head1->next;
+        head2 = head2->next;
+    }
+    return -1;
 }
