@@ -21,7 +21,15 @@ Now what we want is to move odd-indexed to right and even-Indexed to left
    so   Result1=00000001 
        Result2= 00101010
  Now do | =  00101011   =32+8+3=43
+ 
+ 
+ NOTE :
+ Binary representation of 5 is 0101. So 0X55555555 has 16 ones, 16 zeros and the ones,zeros take alternate positions. 
+ Similarly 0X33333333 has 16 ones, 16 zeros and 2 consecutive ones, 2 consecutive zeros alternate.
+ 
  */
+
+
 
 class Solution
 {
@@ -29,8 +37,9 @@ class Solution
     //Function to swap odd and even bits.
     unsigned int swapBits(unsigned int n)
     {
-    	int evenPosBits = (n&0xAAAAAAAA);
-	    int oddPosBits = (n&(0xAAAAAAAA>>1));
-	    return (evenPosBits>>1)|(oddPosBits<<1);
+    	int evenPosBits = (n&0xAAAAAAAA);  //  0xAAAAAAAA represents binary with even positions set as 1
+	int oddPosBits = (n&(0xAAAAAAAA>>1));//or (n&0x55555555) // 0x55555555 represents binary with odd positions set as 1
+	// you can also use int oddPosBits = (n&0x55555555);    
+	return (evenPosBits>>1)|(oddPosBits<<1);
     }
 };
