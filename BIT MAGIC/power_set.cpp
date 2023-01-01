@@ -10,7 +10,7 @@ class Solution{
 		        for(int j=0;j<n;j++){
                     if(counter & (1 << j)){
                     str+=s[j];
-                }
+                    }
 		    }
 		    if(str.size()!=0)
 		    v.push_back(str);
@@ -19,3 +19,4 @@ class Solution{
 		    return v;
 		}
 };
+
