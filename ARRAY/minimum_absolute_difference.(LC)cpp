@@ -1,0 +1,21 @@
+class Solution {
+public:
+    vector<vector<int>> minimumAbsDifference(vector<int>& arr) {
+        int n=arr.size();
+        vector<vector<int>> res;
+        sort(arr.begin(),arr.end());
+        int min_dif=abs(arr[1]-arr[0]);
+        for(int i=1;i<n-1;i++)
+        {
+          int k=abs(arr[i+1]-arr[i]);
+          min_dif=min(min_dif,k);
+        }
+        for(int i=0;i<n-1;i++)
+        {
+            int k=abs(arr[i+1]-arr[i]);
+            if(k==min_dif)
+            res.push_back({arr[i],arr[i+1]});
+        }
+        return res;
+    }
+};
