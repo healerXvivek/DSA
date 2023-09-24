@@ -28,3 +28,29 @@ public:
         return ans;
     }
 };
+
+
+// 2nd solution
+
+class Solution {
+public:
+    string reverseOnlyLetters(string str) {
+        int s=0;
+        int e=str.length()-1;
+        while(s<=e){
+            if(isalpha(str[s]) && isalpha(str[e])){
+            swap(str[s],str[e]);
+            s++;
+            e--;
+            }
+            else if(isalpha(str[s]) && !isalpha(str[e]))
+            e--;
+            else if(!isalpha(str[s]) && isalpha(str[e]))
+            s++;
+            else
+            s++,e--;
+        }
+        return str;
+    }
+};
+
